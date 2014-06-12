@@ -1,4 +1,4 @@
-(defproject ez-web "0.1.0"
+(defproject ez-web "0.1.1-SNAPSHOT"
   :description "ez-web, batteries for the web"
   :url "https://github.com/emil0r/ez-web"
   :license {:name "Eclipse Public License"
