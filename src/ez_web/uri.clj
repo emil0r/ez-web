@@ -19,4 +19,4 @@
 (defn uri-but-last-part
   "Take any uri and return everything but the last part corresponding to the page"
   [uri]
-  (str/join "/" (butlast (remove str/blank? (str/split uri #"/")))))
+  (str "/" (str/join "/" (butlast (remove str/blank? (str/split uri #"/"))))))
