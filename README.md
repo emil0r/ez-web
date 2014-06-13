@@ -36,6 +36,20 @@ Batteries for the web
 ;; :base-uri - attach a base uri to the beginning of every breadcrumb
 ```
 
+## URI
+```
+(require '[ez-web.uri :refer [join-uri uri-last-part uri-but-last-part])
+
+(= (join-uri "path" "to" "your" "website")
+   "/path/to/your/website")
+
+(= (uri-last-part "/path/to/your/website")
+   "website")
+   
+(= (uri-but-last-part "/path/to/your/website")
+   "/path/to/your")
+```
+
 ## License
 
 Copyright © 2014 Emil Bengtsson
