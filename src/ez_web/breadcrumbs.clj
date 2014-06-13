@@ -6,7 +6,7 @@
                            href-attrib last? parts base-uri
                            separator separator-attrib]
                     :or {separator " &rsaquo; " last? true holder :ul elem :li
-                         base-uri "" separator-attrib "separator"}}]
+                         base-uri "" separator-attrib {:class "separator"}}}]
   [holder holder-attrib
    (butlast
     (interleave
@@ -16,7 +16,7 @@
               name]]) crumb-data)
      (map (fn [_] [elem separator-attrib separator]) (range (count crumb-data)))))
    (if (and last? (not (empty? crumb-data)))
-     [:li.separator separator])
+     [elem separator-attrib separator])
    (if last?
      [elem elem-attrib
       (if (sequential? (last parts)) (second (last parts)) (last parts))])])
