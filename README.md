@@ -37,7 +37,7 @@ Batteries for the web
 ```
 
 ## URI
-```
+```clojure
 (require '[ez-web.uri :refer [join-uri uri-last-part uri-but-last-part])
 
 (= (join-uri "path" "to" "your" "website")
