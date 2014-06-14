@@ -2,6 +2,12 @@
 
 Batteries for the web
 
+## Dependancy
+```clojure
+[ez-web "0.1.1"]
+```
+
+
 ## paginate
 ```clojure
 (require '[ez-web.paginator :refer [paginate]])
