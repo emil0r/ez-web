@@ -42,6 +42,35 @@ Batteries for the web
 ;; :base-uri - attach a base uri to the beginning of every breadcrumb
 ```
 
+## sidmenu
+```clojure
+(require '[ez-web.sidemenu :refer [sidemenu]])
+(sidemenu "/foo/bar"
+          [["/" "Home"]
+           ["/foo" "Foo" 
+             ["/foo/bar" "Bar"]]
+           ["/baz" "Baz"]])
+           
+           =>
+           
+           <ul class="sidemenu">
+             <li>
+               <a href="/">Home</a>
+             </li>
+             <li class="active">
+               <a href="/foo">Foo</a>
+               <ul class="sub">
+                  <li class="active">
+                     <a href="/foo/bar">Bar</a>
+                  </li>
+               </ul>
+             </li>
+             <li>
+               <a href="/baz">Baz</a>
+             </li>
+           </ul>
+```
+
 ## URI
 ```clojure
 (require '[ez-web.uri :refer [join-uri uri-last-part uri-but-last-part])
