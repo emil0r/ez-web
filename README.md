@@ -45,6 +45,23 @@ Batteries for the web
 ## sidmenu
 ```clojure
 (require '[ez-web.sidemenu :refer [sidemenu]])
+
+;; usage
+(sidemenu uri children opts)
+
+;; opts
+;; keys and default options
+;; base key is used for detemining which page you're currently on. only useful
+;; if you're planning on having a link on the page to itself even though you're
+;; at the root level
+
+(let [{:keys [holder holder-attrib elem elem-attrib href-attrib base]
+       :or {holder :ul holder-attrib {:class "sidemenu"}
+            elem :li elem-attrib {} href-attrib {}
+            base "/"} opts]
+      )
+
+;; example
 (sidemenu "/foo/bar"
           [["/" "Home"]
            ["/foo" "Foo" 
