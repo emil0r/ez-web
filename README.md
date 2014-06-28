@@ -4,7 +4,7 @@ Batteries for the web
 
 ## Dependancy
 ```clojure
-[ez-web "0.1.1"]
+[ez-web "0.2.0"]
 ```
 
 
