@@ -4,7 +4,7 @@ Batteries for the web
 
 ## Dependancy
 ```clojure
-[ez-web "0.2.0"]
+[ez-web "0.2.1"]
 ```
 
 
@@ -42,7 +42,7 @@ Batteries for the web
 ;; :base-uri - attach a base uri to the beginning of every breadcrumb
 ```
 
-## sidmenu
+## sidemenu
 ```clojure
 (require '[ez-web.sidemenu :refer [sidemenu]])
 
