@@ -4,7 +4,7 @@ Batteries for the web
 
 ## Dependancy
 ```clojure
-[ez-web "0.2.2"]
+[ez-web "0.2.3"]
 ```
 
 
@@ -14,7 +14,7 @@ Batteries for the web
 ;; if a collection is sent it a count of the collection will be used as length
 ;; otherwise send in a length, number of pages you want and a position
 (= (paginate (range 101) 10 5)
-   {:prev-seq (3 2 1), :next-seq (7 8 9 10 11), :pages 11, :page 5, :next 6, :prev 4}
+   {:prev-seq (4 3 2 1), :next-seq (6 7 8 9 10 11), :pages 11, :page 5, :next 6, :prev 4}
 ```
 
 ## breadcrumbs
