@@ -12,3 +12,13 @@
                   ["/foo" "Foo" ["/foo/bar" "Bar"]]
                   ["/baz" "Baz"]]))
  => "<ul class=\"sidemenu\"><li><a href=\"/\">Home</a></li><li class=\"active\"><a href=\"/foo\">Foo</a><ul class=\"sub\"><li class=\"active\"><a href=\"/foo/bar\">Bar</a></li></ul></li><li><a href=\"/baz\">Baz</a></li></ul>")
+
+
+(fact
+ "Get a sidemenu"
+ (html (sidemenu "/admin/foo/bar"
+                 [["/" "Home"]
+                  ["/foo" "Foo" ["/foo/bar" "Bar"]]
+                  ["/baz" "Baz"]]
+                 {:base "/admin"}))
+ => "<ul class=\"sidemenu\"><li><a href=\"/admin\">Home</a></li><li class=\"active\"><a href=\"/admin/foo\">Foo</a><ul class=\"sub\"><li class=\"active\"><a href=\"/admin/foo/bar\">Bar</a></li></ul></li><li><a href=\"/admin/baz\">Baz</a></li></ul>")
