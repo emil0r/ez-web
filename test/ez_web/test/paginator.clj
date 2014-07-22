@@ -17,18 +17,22 @@
  (let [p1 (paginate (range 15) 1 7)
        p2 (paginate (range 15) 2 4)
        p3 (paginate (range 15) 3 3)
-       p4 (paginate (range 15) 4 2)]
+       p4 (paginate (range 15) 4 2)
+       p5 (paginate (range 15) 1 1)]
    [(:prev-seq p1)
     (:prev-seq p2)
     (:prev-seq p3)
-    (:prev-seq p4)])
- => [[6 5 4 3 2 1] [3 2 1] [2 1] [1]])
+    (:prev-seq p4)
+    (:prev-seq p5)])
+ => [[6 5 4 3 2 1] [3 2 1] [2 1] [1] []])
 
 (fact
  "Next sequence"
- (let [p1 (paginate (range 15) 1 7)]
-   (:next-seq p1))
- => [8 9 10 11 12 13 14 15])
+ (let [p1 (paginate (range 15) 1 7)
+       p2 (paginate (range 15) 1 15)]
+   [(:next-seq p1)
+    (:next-seq p2)])
+ => [[8 9 10 11 12 13 14 15] []])
 
 (fact
  "prev/next"

@@ -26,6 +26,7 @@
       {:pages pages
        :page page
        :next-seq (range (inc page) (inc pages))
-       :prev-seq (reverse (range 1 (inc (or prev page))))
+       :prev-seq (reverse (range 1 (if (nil? prev) 1
+                                       (inc prev))))
        :next (if (> next pages) nil next)
        :prev prev})))
