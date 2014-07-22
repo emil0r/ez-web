@@ -22,13 +22,13 @@
     (:prev-seq p2)
     (:prev-seq p3)
     (:prev-seq p4)])
- => [[5 4 3 2 1] [2 1] [1] []])
+ => [[6 5 4 3 2 1] [3 2 1] [2 1] [1]])
 
 (fact
  "Next sequence"
  (let [p1 (paginate (range 15) 1 7)]
    (:next-seq p1))
- => [9 10 11 12 13 14 15])
+ => [8 9 10 11 12 13 14 15])
 
 (fact
  "prev/next"

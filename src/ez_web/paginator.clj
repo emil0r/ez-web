@@ -22,24 +22,10 @@
               :else page)
         next (+ page 1)
         prev (- page 1)]
-    (reduce (fn [out k]
-              (if (nil? k)
-                out
-                (cond
-                 ;;
-                 (and (= k :next-seq)
-                      (not (nil? (:next out))))
-                 (assoc out k (range (+ 1 (:next out))
-                                     (+ 1 (:pages out))))
-                 ;;
-                 (and (= k :prev-seq)
-                      (not (nil? (:prev out))))
-                 (assoc out k (reverse (range 1
-                                              (:prev out))))
-                 ;;
-                 :else out)))
-            {:pages pages
-             :page page
-             :next (if (> next pages) nil next)
-             :prev (if (or (neg? prev) (zero? prev)) nil prev)}
-            [:next-seq :prev-seq])))
+    (let [prev (if (or (neg? prev) (zero? prev)) nil prev)]
+      {:pages pages
+       :page page
+       :next-seq (range (inc page) (inc pages))
+       :prev-seq (reverse (range 1 (inc (or prev page))))
+       :next (if (> next pages) nil next)
+       :prev prev})))
