@@ -13,7 +13,7 @@
                   (apply str (butlast base))
                   base)]
       [holder holder-attrib
-       (map (fn [[path name sub-children]]
+       (map (fn [[path name & sub-children]]
               (let [path (if base (join-uri base path) path)]
                 [elem (merge elem-attrib
                              (cond
@@ -26,5 +26,5 @@
                               :else nil))
                  [:a (merge {:href path} href-attrib) name]
                  (when sub-children
-                   (sidemenu uri [sub-children] (assoc opts :holder-attrib {:class "sub"})))
+                   (sidemenu uri sub-children (assoc opts :holder-attrib {:class "sub"})))
                  ])) children)])))

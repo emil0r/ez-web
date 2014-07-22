@@ -9,9 +9,11 @@
  "Get a sidemenu"
  (html (sidemenu "/foo/bar"
                  [["/" "Home"]
-                  ["/foo" "Foo" ["/foo/bar" "Bar"]]
-                  ["/baz" "Baz"]]))
- => "<ul class=\"sidemenu\"><li><a href=\"/\">Home</a></li><li class=\"active\"><a href=\"/foo\">Foo</a><ul class=\"sub\"><li class=\"active\"><a href=\"/foo/bar\">Bar</a></li></ul></li><li><a href=\"/baz\">Baz</a></li></ul>")
+                  ["/foo" "Foo"
+                   ["/foo/bar" "Bar"]
+                   ["/foo/baz" "Baz"]]
+                  ["/baz" "Baz2"]]))
+ => "<ul class=\"sidemenu\"><li><a href=\"/\">Home</a></li><li class=\"active\"><a href=\"/foo\">Foo</a><ul class=\"sub\"><li class=\"active\"><a href=\"/foo/bar\">Bar</a></li><li><a href=\"/foo/baz\">Baz</a></li></ul></li><li><a href=\"/baz\">Baz2</a></li></ul>")
 
 
 (fact
