@@ -10,6 +10,9 @@ Batteries for the web
 
 Works with Clojure and ClojureScript.
 
+## core
+
+Core mirrors all functions in the various namespaces for convenience.
 
 ## paginate
 ```clojure
