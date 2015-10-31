@@ -13,7 +13,8 @@
                    1))
         page (if (and (string? page)
                       (not= page ""))
-               (read-string page)
+               #?(:clj  (Integer/parseInt page)
+                  :cljs (js/parseInt page))
                page)
         page (cond
               (nil? page) 1
