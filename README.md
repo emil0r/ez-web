@@ -2,10 +2,13 @@
 
 Batteries for the web
 
+
 ## Dependancy
 ```clojure
-[ez-web "0.2.4"]
+[ez-web "0.3.0"]
 ```
+
+Works with Clojure and ClojureScript.
 
 
 ## paginate
@@ -104,7 +107,7 @@ Batteries for the web
 
 ## License
 
-Copyright © 2014 Emil Bengtsson
+Copyright © 2014-2015 Emil Bengtsson
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
